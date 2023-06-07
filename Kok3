@@ -1,21 +1,37 @@
-local Players = game:GetService("Players")
+local function callback(Text)
 
-local MarketPlaceService = game:GetService("MarketplaceService")
+ if Text == "Subscribe?" then
 
-local GamepassID = 52679603
+  print ("Answer")
 
-local ToolName = "gun"
+elseif Text == ("no") then
 
- 
+ print ("Answer2")
 
-Players.PlayerAdded:Connect(function(player)
+ end
 
-	player.CharacterAdded:Connect(function(character)		if MarketPlaceService:UserOwnsGamePassAsync(player.UserId, GamepassID) then
+end
 
-			script[ToolName]:Clone().Parent = player.Backpack
+local NotificationBindable = Instance.new("BindableFunction")
 
-		end
+NotificationBindable.OnInvoke = callback
 
-	end)
+--
 
-end)
+game.StarterGui:SetCore("SendNotification",  {
+
+ Title = "yieviro92creepy [ADMIN]";
+
+ Text = "Hello im admin!";
+
+ Icon = "";
+
+ Duration = 5;
+
+ Button1 = "subscribe";
+
+ Button2 = "no?";
+
+ Callback = NotificationBindable;
+
+})
