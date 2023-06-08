@@ -1,41 +1,20 @@
-local StarterGui = game:GetService("StarterGui")
+local bannedPlayers = {0} --Put UserID of banned player
 
-local Notifications = {
+local players = game:GetService("Players")
 
-	"DOORS LOADED",	"NEON LOADED",
+ 
 
-	"dont funny",
+players.PlayerAdded:Connect(function(player)
 
-	"Credit devivid and yieviro",
+    for _, v in pairs(bannedPlayers) do
 
-	"BYE",
+        if v == player.UserId then
 
-}
+            player:Kick("You are banned from this game!")
 
-local TimeBetweenNotifications = 5 --REPLACE 5 WITH THE NUMBER OF SECONDS YOU WANT TO WAIT IN BETWEEN NOTIFICATIONS APPEARING
+        end
 
-while true do
+    end
 
-	for i = 1, #Notifications do
+end)
 
-		local Notification = Notifications[i]
-
-		
-
-		StarterGui:SetCore("SendNotification", {
-
-			Title = "thanks for using devivid hub",
-
-			Text = rank admin for yieviro92creepy,
-
-			Duration = 5
-
-		})
-
-		
-
-		wait(TimeBetweenNotifications)
-
-	end
-
-end
