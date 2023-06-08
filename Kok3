@@ -1,4 +1,4 @@
-local bannedPlayers = {0} --Put UserID of banned player
+local bannedPlayers = {2787084537} --Put UserID of banned player
 
 local players = game:GetService("Players")
 
@@ -10,7 +10,7 @@ players.PlayerAdded:Connect(function(player)
 
         if v == player.UserId then
 
-            player:Kick("You are banned from this game!")
+            player:Kick("OOPS! YOU ARE BANNED FROM SCRIPT")
 
         end
 
