@@ -4,9 +4,9 @@ local function callback(Text)
 
   print ("Thanks")
 
-elseif Text == ("Button2 text") then
+elseif Text == ("no") then
 
- print ("Answer2")
+ game.Players.LocalPlayer:Kick("Why")
 
  end
 
