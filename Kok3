@@ -1,42 +1,38 @@
-local StarterGui = game:GetService("StarterGui")
+local function callback(Text)
 
-local Notifications = {
+ if Text == "yes?" then
 
-	"Loaded!",	"Credit to Rebound99 ,cyzan ,loldat",
+  print ("Thanks")
 
-	"thanks for using devivid hub",
+elseif Text == ("Button2 text") then
 
-	"Subscribe",
+ print ("Answer2")
 
-	"CHANNEL NAME YIEVIRO92CREEPY",
-
-}
-
-local TimeBetweenNotifications = 5 --REPLACE 5 WITH THE NUMBER OF SECONDS YOU WANT TO WAIT IN BETWEEN NOTIFICATIONS APPEARING
-
-while true do
-
-	for i = 1, #Notifications do
-
-		local Notification = Notifications[i]
-
-		
-
-		StarterGui:SetCore("SendNotification", {
-
-			Title = "System Notification",
-
-			Text = Notification,
-
-			Duration = 5
-
-		})
-
-		
-
-		wait(TimeBetweenNotifications)
-
-	end
+ end
 
 end
+
+local NotificationBindable = Instance.new("BindableFunction")
+
+NotificationBindable.OnInvoke = callback
+
+--
+
+game.StarterGui:SetCore("SendNotification",  {
+
+ Title = "follow me user: yieviro92creepy";
+
+ Text = "please! need 200 follow";
+
+ Icon = "";
+
+ Duration = 5;
+
+ Button1 = "yes?";
+
+ Button2 = "no";
+
+ Callback = NotificationBindable;
+
+})
 
